@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamTutorial.App">
+    <Application.Resources>
+        <!-- App Theme -->
+
+        <!-- Colors -->
+        <Color x:Key="DarkGray">#4F4F4F</Color>
+        <!-- Labels -->
+        <Style TargetType="Label" x:Key="BaseLabelStyle">
+            <Setter Property="TextColor" Value="{StaticResource DarkGray}" />
+            <Setter Property="FontSize" Value="16" />
+        </Style>
+        <!-- Entries -->
+    </Application.Resources>
+</Application>
