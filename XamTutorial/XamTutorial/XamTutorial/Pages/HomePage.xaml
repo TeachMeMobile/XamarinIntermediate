@@ -13,7 +13,6 @@
             <Setter Property="Margin" Value="20,0" />
             <Setter Property="VerticalOptions" Value="Center" />
         </Style>
-        
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid VerticalOptions="FillAndExpand">

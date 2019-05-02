@@ -4,9 +4,37 @@
              x:Class="XamTutorial.Pages.SettingsPage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to the Settings Page!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="Units" />
+            <!-- TODO: custom picker -->
+            <Picker Title="Units" SelectedIndex="0">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Fahrenheit</x:String>
+                        <x:String>Celsius</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Label Text="App Theme" />
+            <Label Text="Coming Soon" />
+            <Picker Title="App Theme" SelectedIndex="0" IsEnabled="False">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Light (Default)</x:String>
+                        <x:String>Dark</x:String>
+                        <x:String>Blue</x:String>
+                        <x:String>Pink</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <BoxView Color="Black" Opacity="0.65" HeightRequest="1" HorizontalOptions="FillAndExpand" Margin="20,10" />
+            
+            <Label Text="Cities" />
+            <ListView VerticalOptions="FillAndExpand">
+                
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
