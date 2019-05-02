@@ -35,6 +35,7 @@ namespace XamTutorial.ViewModels.Base
 
             // View models - by default, TinyIoC will register concrete classes as multi-instance
             _container.Register<HomePageViewModel>();
+            _container.Register<SettingsPageViewModel>();
 
             // Services - by default, TinyIoC will regerter interface registrations as singletons.
             // Register services that do not depend on a mock service counterpart

@@ -5,21 +5,52 @@
              base:ViewModelLocator.AutoWireViewModel="True"
              NavigationPage.HasNavigationBar="False"
              x:Class="XamTutorial.Pages.HomePage">
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="VeryLargeFont" BasedOn="{StaticResource BaseLabelStyle}">
+            <Setter Property="FontSize" Value="48" />
+        </Style>
+        <Style TargetType="Label" x:Key="HeaderLabel" BasedOn="{StaticResource BaseLabelStyle}">
+            <Setter Property="Margin" Value="20,0" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Xamarin Tutorial Project" Style="{StaticResource BaseLabelStyle}" 
-                   HorizontalOptions="CenterAndExpand" />
-            <ListView ItemsSource="{Binding MenuItems}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding .}" />
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        <Grid VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+
+            <BoxView Color="#68DEC2" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" />
+            <Label Text="{Binding City}" Grid.Row="0" Grid.Column="0" Style="{StaticResource BaseLabelStyle}" />
+
+            <Image Grid.Row="0" Grid.Column="1" Aspect="AspectFit" Margin="10" Source="settings.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SettingsCommand}" />
+                </Image.GestureRecognizers>
+            </Image>
+
+            <StackLayout Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" VerticalOptions="FillAndExpand" Margin="20,0">
+                <StackLayout Orientation="Horizontal" Margin="0,40,0,10">
+                    <Image WidthRequest="60" HeightRequest="60" Aspect="AspectFit" Source="{Binding ConditionIcon}" />
+                    <StackLayout>
+                        <Label Text="{Binding Temperature}" Style="{StaticResource VeryLargeFont}" />
+                        <Label Text="{Binding Condition}" />
+                    </StackLayout>
+                    
+                </StackLayout>
+                <ScrollView VerticalOptions="FillAndExpand">
+                    <StackLayout>
+                        <!-- Forecast List -->
+
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
